@@ -1,0 +1,83 @@
+---
+date: "2023-06-19"
+title: "맥 세팅"
+tags: ['mac']
+summary: "개인용 맥 클린설치 후 세팅 목록"
+---
+
+## 설치
+
+### 필수
+
+- 크롬
+- xcode command line tools
+
+```bash
+xcode-select --install
+```
+
+- homebrew [https://brew.sh/index_ko]
+- node
+
+```bash
+brew install node
+```
+
+- go
+
+```bash
+brew install go
+```
+
+- git
+
+```bash
+brew install -s git
+```
+
+- iterm2
+
+```bash
+brew install --cask iterm2
+```
+
+- Visual Studio Code [https://code.visualstudio.com/]
+- Ridibooks
+- Jetbrain Toolbox
+  - Goland
+  - Webstorm
+  - Datagrip (선택)
+- CleanMyMac
+- KakaoTalk
+- Dropbox
+- Docker
+
+### 선택
+
+- Pocket
+- gSwitch
+
+```bash
+brew install --cask gswitch
+```
+
+- Notion
+- Figma
+- PostMan
+- Slack & Discord
+
+## 설정
+
+- ssh-key
+
+```bash
+ssh-keygen
+```
+
+- ssh 로 github push 가 되지 않는 경우 .ssh 폴더에 config 파일 생성 후 아래와 같이 기입
+
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+```
