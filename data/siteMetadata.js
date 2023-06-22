@@ -1,12 +1,12 @@
 const siteMetadata = {
-  title: "zipkero's blog",
+  title: "끄적끄적.. 귀찮아..",
   author: "zipkero",
   headerTitle: "",
   description: "A blog created with Next.js and Tailwind.css",
   language: "ko-kr",
   theme: "system", // system, dark or light
-  siteUrl: "https://tailwind-nextjs-starter-blog.vercel.app",
-  siteRepo: "https://github.com/timlrx/tailwind-nextjs-starter-blog",
+  siteUrl: "https://zipkero.vercel.app",
+  siteRepo: "https://github.com/zipkero/zipkero.github.io",
   siteLogo: "/static/images/logo.png",
   image: "/static/images/avatar.webp",
   socialBanner: "/static/images/twitter-card.png",
