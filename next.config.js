@@ -53,7 +53,6 @@ const securityHeaders = [
 ]
 
 module.exports = withBundleAnalyzer({
-  basePath: "/zipkero.github.io",
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "md", "mdx"],
   eslint: {
