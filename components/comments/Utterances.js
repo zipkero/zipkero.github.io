@@ -35,8 +35,10 @@ const Utterances = () => {
 
   // Reload on theme change
   useEffect(() => {
+    /*
     const iframe = document.querySelector("iframe.utterances-frame")
     if (!iframe) return
+     */
     LoadComments()
   }, [LoadComments])
 
