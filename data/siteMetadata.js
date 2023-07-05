@@ -6,7 +6,7 @@ const siteMetadata = {
   language: "ko-kr",
   theme: "system", // system, dark or light
   siteUrl: "https://zipkero.vercel.app",
-  siteRepo: "https://github.com/zipkero/zipkero.github.io",
+  siteRepo: "https://github.com/zipkero/zipkero.vercel.app",
   siteLogo: "/static/images/logo.png",
   image: "/static/images/avatar.webp",
   socialBanner: "/static/images/twitter-card.png",
@@ -62,7 +62,7 @@ const siteMetadata = {
     utterancesConfig: {
       // Visit the link below, and follow the steps in the 'configuration' section
       // https://utteranc.es/
-      repo: "zipkero/zipkero.github.io",
+      repo: "zipkero/zipkero.vercel.app",
       issueTerm: "pathname", // supported options: pathname, url, title
       label: "Comment", // label (optional): Comment 💬
       // theme example: github-light, github-dark, preferred-color-scheme
