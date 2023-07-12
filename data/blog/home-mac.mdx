@@ -67,10 +67,17 @@ brew install --cask gswitch
 - Slack & Discord
 - Virtual Box
 
-- kubernetes-cli
+### Utility
 
 ```bash
+# tree
+brew install tree
+# 쿠버네티스 사용하면
 brew install kubernetes-cli
+# 테라폼 사용하면
+brew install terraform
+# virtual box 와 vagrant 사용하면
+brew install vagrant
 ```
 
 ## 설정
@@ -87,4 +94,11 @@ ssh-keygen
 Host github.com
     Hostname ssh.github.com
     Port 443
+```
+
+- 터미널 단축키 .zshrc
+
+```
+alias k="kubectl"
+alias ll="ls -al"
 ```
