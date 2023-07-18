@@ -14,7 +14,7 @@ summary: "쿠버네티스의 클러스터 구축 과정을 알아보자"
 
 ![Parallels 에디션 비교](/static/images/k8s-cluster-build/parallels.png)
 
-Parallels는 Pro Edition 부터 vagrant 를 지원하는데 어짜피 Parallels가 유료다보니 그냥 Pro Editon으로 구매하였습니다.<br/>
+Parallels는 Pro Edition 부터 Vagrant 를 지원하는데 어짜피 Parallels가 유료다보니 그냥 Pro Editon으로 구매하였습니다.<br/>
 [Parallels 다운로드 사이트](https://www.parallels.com/kr/)
 
 ### 2. Vagrant 설치
@@ -31,7 +31,7 @@ vagrant plugin install vagrant-parallels
 
 ### 4. Vagrantfile 작성
 
-컨트롤플레인노드와 데이터플레인토드 2개로 구성하였으며, 이미지를 실리콘 맥에 맞게 arm64 으로 지정하였습니다.
+컨트롤플레인노드와 데이터플레인노드 2개로 구성하였으며, 이미지를 실리콘 맥에 맞게 arm64 으로 지정하였습니다.
 
 ```Vagrantfile
 N = 2
