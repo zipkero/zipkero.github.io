@@ -103,3 +103,11 @@ Host github.com
 alias k="kubectl"
 alias ll="ls -al"
 ```
+
+- 맥북 대기상태 전력소모량 줄이기
+
+```bash
+sudo pmset standbydelaylow 900 standbydelayhigh 1800
+# 실리콘 맥북은 기본적으로 0으로 설정되어 있는 듯 하다.
+# sudo pmset standbydelaylow 0 standbydelayhigh 0
+```
