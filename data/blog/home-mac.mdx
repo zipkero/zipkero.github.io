@@ -42,7 +42,11 @@ brew install --cask iterm2
 ```
 
 - Visual Studio Code [https://code.visualstudio.com/]
-- Ridibooks
+
+```bash
+brew install --cask visual-studio-code
+```
+
 - Jetbrain Toolbox
   - Goland
   - Webstorm
@@ -50,25 +54,7 @@ brew install --cask iterm2
 - CleanMyMac or AppCleaner + RunCat
 - KakaoTalk
 - Docker
-
-### 선택
-
-- Pocket
-- gSwitch (m계열은 필요없음)
-
-```bash
-brew install --cask gswitch
-```
-
-- Dropbox
-- Notion
-- Figma
-- PostMan
-- Slack & Discord
-- Parelles or Virtual Box
-  - 애플 실리콘 계열은 현재까지는 Virtual Box, VMWare 에서 완벽히 지원이 되지 않는다.
-
-### Utility
+- etc
 
 ```bash
 # tree
@@ -80,6 +66,24 @@ brew install terraform
 # virtual box 와 vagrant 사용하면
 brew install vagrant
 ```
+
+### 선택
+
+- Pocket
+- gSwitch (m계열은 필요없음)
+
+```bash
+brew install --cask gswitch
+```
+
+- Dropbox
+- Ridibooks
+- Notion
+- Figma
+- PostMan
+- Slack & Discord
+- Parelles or Virtual Box
+  - 애플 실리콘 계열은 현재까지는 Virtual Box, VMWare 에서 완벽히 지원이 되지 않는다.
 
 ## 설정
 
@@ -104,7 +108,7 @@ alias k="kubectl"
 alias ll="ls -al"
 ```
 
-- 맥북 대기상태 전력소모량 줄이기
+- 맥북 대기상태 전력소모량 줄이기(ventura 부터는 사라진 것으로 보임)
 
 ```bash
 sudo pmset standbydelaylow 900 standbydelayhigh 1800
