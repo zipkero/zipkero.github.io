@@ -1,7 +1,7 @@
 ---
 date: "2023-06-20"
 title: "git 명령어"
-tags: ['git']
+tags: ["git"]
 summary: "자주 사용하는 git 명령어 모음"
 ---
 
@@ -9,116 +9,116 @@ summary: "자주 사용하는 git 명령어 모음"
 
 1. 원격저장소로 브랜치 Push
 
- ```bash
- git push <remoteName> <branchName>
+```bash
+git push <remoteName> <branchName>
 ```
 
 2. 원격저장소 복제
 
- ```bash
- git clone <remoteUrl>
- git clone <remoteUrl> <branchName>
+```bash
+git clone <remoteUrl>
+git clone <remoteUrl> <branchName>
 ```
 
 3. 브랜치 생성 및 이동
 
- ```bash
- # 브랜치 이동
- git checkout <branchName>
- # 브랜치 생성
- git checkout -b <branchName>
- # 원격저장소 기반의 브랜치 생성
- git checkout -b <branchName> <remoteName>/<branchName>
+```bash
+# 브랜치 이동
+git checkout <branchName>
+# 브랜치 생성
+git checkout -b <branchName>
+# 원격저장소 기반의 브랜치 생성
+git checkout -b <branchName> <remoteName>/<branchName>
 
- # checkout의 기능이 방대하여 2.23버젼부터 아래와 같이 2개의 명령어로 분리되었다.
- # 브랜치 이동
- git switch <branchName>
- # 브랜치를 새로 만들면서 이동
- git switch -c <branchName>
- # 특정 커밋을 기반으로 한 브랜치를 새로 만들어 이동
- git switch -c <branchName> <HEAD>
- # 특정 원격브랜치를 기반으로 한 새로운 브랜치를 생성
- git switch -c <branchName> -t <remoteName>/<branchName>
+# checkout의 기능이 방대하여 2.23버젼부터 아래와 같이 2개의 명령어로 분리되었다.
+# 브랜치 이동
+git switch <branchName>
+# 브랜치를 새로 만들면서 이동
+git switch -c <branchName>
+# 특정 커밋을 기반으로 한 브랜치를 새로 만들어 이동
+git switch -c <branchName> <HEAD>
+# 특정 원격브랜치를 기반으로 한 새로운 브랜치를 생성
+git switch -c <branchName> -t <remoteName>/<branchName>
 
- # 변경사항을 복구
- git restore .
- # 특정파일의 변경사항을 복구
- git restore <file>
- # 스테이징된 파일의 변경사항을 복구
- git restore --staged <file>
- # 특정 커밋의 파일이나 디렉토리만 복구
- # git restore --source=HEAD{n} <file | directory>
- git restore --source=HEAD index.js
- git restore --source=HEAD{2} ./src/components
+# 변경사항을 복구
+git restore .
+# 특정파일의 변경사항을 복구
+git restore <file>
+# 스테이징된 파일의 변경사항을 복구
+git restore --staged <file>
+# 특정 커밋의 파일이나 디렉토리만 복구
+# git restore --source=HEAD{n} <file | directory>
+git restore --source=HEAD index.js
+git restore --source=HEAD{2} ./src/components
 ```
 
 4. 브랜치 삭제
 
- ```bash
- git checkout <branchName>
- git branch -D <branchName>
- # 원격 브랜치 삭제 (보통은 remoteName = origin)
- git push -D <remoteName> <branchName>
+```bash
+git checkout <branchName>
+git branch -D <branchName>
+# 원격 브랜치 삭제 (보통은 remoteName = origin)
+git push -D <remoteName> <branchName>
 ```
 
 5. 브랜치 리스트
 
- ```bash
- git branch # 로컬 브런치 리스트
- git branch -r # 원격저장소 브런치 리스트
- git branch -a # 로컬+원격 브런치 리스트
+```bash
+git branch # 로컬 브런치 리스트
+git branch -r # 원격저장소 브런치 리스트
+git branch -a # 로컬+원격 브런치 리스트
 ```
 
 6. 원격저장소 브랜치와 연결
 
- ```bash
- git push -u <remoteName> <branchName>
- # 내 브랜치와 원격저장소 브랜치명이 다른 경우
- git push -u <remoteName> <branchName>:<remoteBranch>
+```bash
+git push -u <remoteName> <branchName>
+# 내 브랜치와 원격저장소 브랜치명이 다른 경우
+git push -u <remoteName> <branchName>:<remoteBranch>
 ```
 
 7. 원격저장소 동기화(fetch + merge)
 
- ```bash
- # pull = fetch + merge, fetch + rebase
- git pull origin <branchName>
- git pull --rebase <remoteName> <branchName>
- git pull --merge <remoteName> <branchName>
+```bash
+# pull = fetch + merge, fetch + rebase
+git pull origin <branchName>
+git pull --rebase <remoteName> <branchName>
+git pull --merge <remoteName> <branchName>
 
- # 커밋불러오기
- git fetch <remoteName> <branchName>
+# 커밋불러오기
+git fetch <remoteName> <branchName>
 
- # 원격저장소와 병합
- git merge <remoteName>/<branchName> # --squash 옵션을 추가하면 하나의 커밋으로 병합됨
+# 원격저장소와 병합
+git merge <remoteName>/<branchName> # --squash 옵션을 추가하면 하나의 커밋으로 병합됨
 
- # master 에 branch 를 병합하고 싶다면
- git checkout master
- git git rebase <branchName>
- # 또는
- git merge <branchName> # --squash 옵션을 추가하면 하나의 커밋으로 병합됨
+# master 에 branch 를 병합하고 싶다면
+git checkout master
+git git rebase <branchName>
+# 또는
+git merge <branchName> # --squash 옵션을 추가하면 하나의 커밋으로 병합됨
 
- git merge --no-commit --squash <branchName>
- # 커밋은 되지 않고 스테이징 상태로 남아있게 되므로 다른 브랜치 히스토리와 꼬일 일이 없음
+git merge --no-commit --squash <branchName>
+# 커밋은 되지 않고 스테이징 상태로 남아있게 되므로 다른 브랜치 히스토리와 꼬일 일이 없음
 ```
 
 8. 커밋 히스토리 확인
 
- ```bash
- # 동기화
- git remote update
+```bash
+# 동기화
+git remote update
 
- # 로컬 커밋 히스토리 확인
- git log
- # 특정 브랜치 히스토리 확인
- git log <branchName>
- # 원격저장소 특정 브랜치의 히스토리 확인
- git log <remoteName>/<remoteBranchName>
+# 로컬 커밋 히스토리 확인
+git log
+# 특정 브랜치 히스토리 확인
+git log <branchName>
+# 원격저장소 특정 브랜치의 히스토리 확인
+git log <remoteName>/<remoteBranchName>
 ```
 
 9. 상태확인
 
- ```bash
- git status
+```bash
+git status
 ```
 
 10. commit 하기
@@ -253,7 +253,9 @@ git push
 ```
 
 ### 오류
+
 1. SSL certificate problem: self signed certificate in certificate chain
+
 - SSL 인증서 문제로 인해 발생했기 때문에 인증서를 비활성화하고 재 시도
 
 ```bash
@@ -261,6 +263,7 @@ git config --global http.sslVerify false
 ```
 
 2. The current branch master has no upstream branch
+
 - upstream 설정
 
 ```bash
@@ -274,6 +277,7 @@ git config --global push.default current
 ```
 
 3. HTTP Basic: Access denied
+
 - 계정정보 초기화 후 다시 시도
 
 ```bash
@@ -282,7 +286,9 @@ git config --system --unset credential.helper
 
 - vs 에서 발생 시 아래와 같이 진행 후 시도
 - 제어판 - 사용자 계정 - 자격 증명 관리자 - 일반 자격증명(해당 git 계정 정보 편집)
+
 4. fetch / merge / full 오류 - Your local changes to the following files would be overwritten by merge
+
 - 수정된 버전이 있어서 발생했으므로 우선 로컬 수정버젼을 임시 저장 후 동기화 진행 그후 다시 복원
 
 ```bash
@@ -294,8 +300,11 @@ git stash pop
 ```
 
 5. Unable to access "URL" The requested URL returned error: 403
+
 - 권한없으니 권한 요청해야 함
+
 6. Updates were rejected because the tip of your current branch is behind
+
 - 원격저장소의 최신상태를 유지한 상태에서 push 를 진행
 
 ```bash
@@ -310,6 +319,7 @@ git push --force <remoteName> <branchName>
 ```
 
 7. refusing to merge unrelated histories
+
 - 원격저장소와는 관련 없이 로컬에 브랜치를 생성하여 push 하는 경우 전혀 상관없는 브랜치로 판단하여 오류가 발생하는 것으로써 두 브랜치를 병합할 수 있도록 허용
 
 ```bash

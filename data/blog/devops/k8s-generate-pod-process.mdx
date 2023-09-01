@@ -1,9 +1,9 @@
 ---
-date: '2023-07-02'
+date: "2023-08-02"
 title: 쿠버네티스 파드 생성 과정
-tags: ['kubernetes']
+tags: ["kubernetes"]
 draft: false
-summary: '쿠버네티스의 파드 생성 과정을 알아보자'
+summary: "쿠버네티스의 파드 생성 과정을 알아보자"
 ---
 
 쿠버네티스는 MSA를 집약적으로 지원하는 플랫폼으로 각 구성요소가 전통적인 요청-응답 방식이 아닌 각자의 역할에만 충실하는 형태로 구성되어 있습니다.
@@ -14,8 +14,8 @@ summary: '쿠버네티스의 파드 생성 과정을 알아보자'
 3. 컨트롤러 매니저는 주기적으로 API 서버를 통해 상태변화를 감지하고 변경을 감지하면 필요한 작업을 API서버를 통해 etcd에 저장
 4. 스케줄러도 주기적으로 API서버를 통해 상태변화을 감지하고 변경을 감지하면 새로운 파드를 실행할 적합한 노드를 선택 후 API 서버를 통해 etcd에 저장
 5. kubelet도 API 서버를 통해 새로운 파드 배치를 감지하고 해당 노드에서 파드를 실행
-<br/>
-![generate-pod](/static/images/k8s-generate-pod-process/k8s-generate-pod.jpg)
+   <br />
+   ![generate-pod](/static/images/k8s-generate-pod-process/k8s-generate-pod.jpg)
 
 다이어그램에서는 누락되어 있지만 kubelet도 파드의 명세를 받아서 컨테이너 런타임(docker, containerd, ..)에게 컨테이너 생성 및 실행을 위임하는 형태입니다.
 (많은 부분이 누락되어 있긴 합니다 ..a)
@@ -47,6 +47,3 @@ summary: '쿠버네티스의 파드 생성 과정을 알아보자'
 
 워커노드에서 실행되는 에이전트로써, API Server를 통해 주기적으로 자신에게 할당된 파드의 명세를 받아오고 이를 기반으로 노드의 상태와 파드의 생명주기를 관리합니다.
 또한, 실행된 컨테이너의 상태정보를 주기적으로 API Server에게 알려주고 상태를 업데이트하도록 합니다.
-
-
-

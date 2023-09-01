@@ -1,7 +1,7 @@
 ---
 date: "2023-06-26"
 title: "Throttle, Debounce"
-tags: ['javascript']
+tags: ["javascript"]
 summary: "javascript의 throtle, debounce에 대한 간략한 설명"
 ---
 
@@ -11,16 +11,16 @@ summary: "javascript의 throtle, debounce에 대한 간략한 설명"
 
 ```javascript
 const throttle = (func, delay) => {
-	let throttled = false;
-	return (...args) => {
-		if(!throttled){
-			throttled = true;
-			setTimeout(()=>{
-				func(...args);
-				throttled = false;
-			}, delay);
-		}
-	}
+  let throttled = false
+  return (...args) => {
+    if (!throttled) {
+      throttled = true
+      setTimeout(() => {
+        func(...args)
+        throttled = false
+      }, delay)
+    }
+  }
 }
 ```
 
@@ -30,10 +30,10 @@ const throttle = (func, delay) => {
 
 ```javascript
 const debounce = (func, delay) => {
-	let timeoutId = null;
-	return (...args) => {
-		clearTimeout(timeoutId);
-		timeoutId = setTimeout(func.bind(this, ...args), delay);
-	}
+  let timeoutId = null
+  return (...args) => {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(func.bind(this, ...args), delay)
+  }
 }
 ```
