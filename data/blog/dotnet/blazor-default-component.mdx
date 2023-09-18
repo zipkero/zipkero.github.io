@@ -33,7 +33,7 @@ Blazor 프레임워크에 내장되어 있는 자주 사용될꺼라고 생각�
             TotalCount = await _Api.GetBlogPostCountAsync();
         }
         var requiredCount = request.Count;
-        var blogList = await _Api.GetBlogPostsAsync(requiredCount, request.StartIndex) ?? new List<BlogPost>();
+        var blogList = await _Api.GetBlogPostsAsync(requiredCount, request.StartIndex);
         return new ItemsProviderResult<BlogPost>(blogList, TotalCount);
     }
 
